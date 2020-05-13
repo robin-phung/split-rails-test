@@ -1,0 +1,17 @@
+<h1>Split Testing</h1>
+Accepted Params:
+<ul>
+<li>user=[integer] for specifying user</li>
+<li>test=[boolean] for running ab_test()</li>
+<li>finish=[boolean] for running ab_finished()</li>
+</ul>
+
+example: /test/index?user=10&test=false&finish=true
+<hr>
+
+<strong>user_id:</strong> <%= @current_user %></br>
+<strong>user's experiments [before]:</strong> <%= @ab_user&.active_experiments || "none" %></br>
+<strong>variant:</strong> <%= @variant %></br>
+<strong>callback_engage:</strong> <%=@callback_engage%> </br>
+<strong>callback_assignment:</strong> <%=@callback_assignment%> </br>
+<strong>callback_finish:</strong> <%=@callback_finish%> </br>
