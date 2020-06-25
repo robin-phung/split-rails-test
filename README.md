@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run:
 
-Things you may want to cover:
+>bundle install
 
-* Ruby version
+>rails server
 
-* System dependencies
 
-* Configuration
+Navigate to: 
 
-* Database creation
+http://localhost:3000/split (for dashboard) or http://localhost:3000/test/index (for testing)
 
-* Database initialization
+![test page](https://user-images.githubusercontent.com/58270715/81761868-f5928880-947f-11ea-9e42-80f9be7eaa90.png) 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Testing local version of split:
+Update gemfile to point to local path. (ex: path: "../split")
