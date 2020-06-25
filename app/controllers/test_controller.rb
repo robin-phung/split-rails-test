@@ -3,16 +3,27 @@ class TestController < ApplicationController
     @callback_engage = "not_run"
     @callback_assignment = "not_run"
     @callback_finish = "not_run"
-
+    @experiment = "none given"
     @current_user = params[:user] || rand(100)
+    @ab_user = ab_user
+    @metadata_name = ""
 
-    if params[:test] == "true"
-      @variant = ab_test("cohorting_test", "control" => 1, "alternative" => 0)
-    else
-      @variant = "ab_test not run"
+    if !params[:experiment].nil?
+      @experiment = params[:experiment]
+
+      if params[:test] == "true"
+
+        ab_test(@experiment) do |alternative, metadata|
+          @variant = alternative
+          @metadata = metadata
+        end
+      else
+        @variant = "ab_test not run"
+      end
+
+      ab_finished(params[:experiment]) if params[:finish] == "true"
+      # ab_finished({ "#{params[:experiment]}": "goal1" }) if params[:finish] == "true"
     end
-
-    ab_finished("cohorting_test") if params[:finish] == "true"
   end
 
   def current_user
@@ -28,6 +39,11 @@ class TestController < ApplicationController
   end
 
   def experiment_conversion_callback(trial)
+    derp = trial.within_conversion_time_frame?
     @callback_finish = "run"
+  end
+
+  def ab_test_user_qualified?
+    true
   end
 end

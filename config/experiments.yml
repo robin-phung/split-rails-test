@@ -1,0 +1,33 @@
+exp508:
+  alternatives:
+    - control
+    - alternative
+  metadata:
+    control:
+      name: bob
+    alternative:
+      name: derp
+  regions:
+    - us
+  resettable: true
+  window_of_time_for_conversion_in_minutes: 1
+exp123:
+  alternatives:
+    - control
+    - alternative
+  regions:
+    - us
+  resettable: true
+  goals:
+    - goal1
+    - goal2
+    - goal3
+  window_of_time_for_conversion_in_minutes: 1
+exp456:
+  alternatives:
+    - control
+    - alternative
+  regions:
+    - us
+  resettable: true
+  window_of_time_for_conversion_in_minutes: 1

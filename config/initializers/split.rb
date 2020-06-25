@@ -1,6 +1,7 @@
 Split.configure do |config|
   config.db_failover = true # handle Redis errors gracefully
   config.db_failover_on_db_error = -> (error) { Rails.logger.error(error.message)}
+  config.experiments = YAML.load_file(Rails.root.join("config/experiments.yml"))
   config.allow_multiple_experiments = true
   config.enabled = true
   config.persistence = Split::Persistence::RedisAdapter.with_config(

@@ -9,9 +9,16 @@ Accepted Params:
 example: /test/index?user=10&test=false&finish=true
 <hr>
 
+<h1>User</h1>
 <strong>user_id:</strong> <%= @current_user %></br>
-<strong>user's experiments [before]:</strong> <%= @ab_user&.active_experiments || "none" %></br>
+<strong>user's experiments:</strong> <%= @ab_user&.active_experiments || "none" %></br>
+<strong>user's keys:</strong> <%= @ab_user&.keys || "none" %></br>
+
+<h1>Experiment</h1>
+<strong>experiment:</strong> <%= @experiment %></br>
 <strong>variant:</strong> <%= @variant %></br>
+<strong>metadata:</strong> <%= @metadata %></br>
+</br>
 <strong>callback_engage:</strong> <%=@callback_engage%> </br>
 <strong>callback_assignment:</strong> <%=@callback_assignment%> </br>
 <strong>callback_finish:</strong> <%=@callback_finish%> </br>
