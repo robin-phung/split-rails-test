@@ -11,6 +11,7 @@ exp508:
     - us
   resettable: true
   window_of_time_for_conversion_in_minutes: 1
+  retain_user_alternatives_after_reset: false
 exp123:
   alternatives:
     - control
@@ -23,6 +24,7 @@ exp123:
     - goal2
     - goal3
   window_of_time_for_conversion_in_minutes: 1
+  retain_user_alternatives_after_reset: true
 exp456:
   alternatives:
     - control

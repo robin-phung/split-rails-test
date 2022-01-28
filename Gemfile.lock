@@ -1,3 +1,11 @@
+PATH
+  remote: ../../clio/split
+  specs:
+    split (3.4.1)
+      redis (>= 2.1)
+      rubystats (>= 0.3.0)
+      sinatra (>= 1.2.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,9 +114,10 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     public_suffix (4.0.4)
-    puma (3.12.4)
+    puma (4.3.10)
+      nio4r (~> 2.0)
     rack (2.2.2)
-    rack-protection (2.0.8.1)
+    rack-protection (2.1.0)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -140,10 +149,11 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.1.4)
+    redis (4.5.1)
     regexp_parser (1.7.0)
-    ruby2_keywords (0.0.2)
+    ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
+    rubystats (0.3.0)
     rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -159,16 +169,11 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    simple-random (1.0.3)
-    sinatra (2.0.8.1)
+    sinatra (2.1.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    split (3.4.1)
-      redis (>= 2.1)
-      simple-random (>= 0.9.3)
-      sinatra (>= 1.2.6)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -204,6 +209,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-19
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -213,11 +219,11 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.4, >= 5.2.4.2)
   sass-rails (~> 5.0)
   selenium-webdriver
-  split
+  split!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
