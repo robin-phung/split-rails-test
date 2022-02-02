@@ -12,7 +12,7 @@ class TestController < ApplicationController
       @experiment = params[:experiment]
 
       if params[:test] == "true"
-
+        byebug
         ab_test(@experiment) do |alternative, metadata|
           @variant = alternative
           @metadata = metadata
