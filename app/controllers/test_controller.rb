@@ -20,8 +20,11 @@ class TestController < ApplicationController
         @variant = "ab_test not run"
       end
 
-      ab_finished(params[:experiment]) if params[:finish] == "true"
-      # ab_finished({ "#{params[:experiment]}": "goal1" }) if params[:finish] == "true"
+      if params[:goal].present?
+        ab_finished({ "#{params[:experiment]}": "#{params[:goal]}" }) if params[:finish] == "true"
+      else
+        ab_finished(params[:experiment]) if params[:finish] == "true"
+      end
     end
   end
 
